@@ -46,8 +46,6 @@ public class Payments implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "name")
     private String name;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "paymentsId")
-    private Collection<SaleOrder> saleOrderCollection;
 
     public Payments() {
     }
@@ -77,14 +75,7 @@ public class Payments implements Serializable {
         this.name = name;
     }
 
-    @XmlTransient
-    public Collection<SaleOrder> getSaleOrderCollection() {
-        return saleOrderCollection;
-    }
-
-    public void setSaleOrderCollection(Collection<SaleOrder> saleOrderCollection) {
-        this.saleOrderCollection = saleOrderCollection;
-    }
+    
 
     @Override
     public int hashCode() {

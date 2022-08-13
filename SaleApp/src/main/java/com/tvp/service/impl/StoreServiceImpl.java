@@ -50,7 +50,9 @@ public class StoreServiceImpl implements StoreService {
     }
 
     @Override
-    public boolean addOrUpdate(Store store) {
+    public boolean addOrUpdate(Store store, User creator) {
+        
+//        User u = this.userRepository.getUserById(5);
         try {
             
             
@@ -59,6 +61,8 @@ public class StoreServiceImpl implements StoreService {
                     ObjectUtils.asMap("resource_type", "auto"));
             
             store.setImage((String) r.get("secure_url"));
+            
+            store.setUserId(creator);
             
         
             return this.storeRepository.addOrUpdate(store);

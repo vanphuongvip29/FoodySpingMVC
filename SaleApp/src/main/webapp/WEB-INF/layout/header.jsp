@@ -40,11 +40,10 @@
             </div>
             <div class="d-none d-lg-flex ms-2">
 
-                <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
-                    <small class="fa fa-user text-body"></small>
-                </a>
-                <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
-                    <small class="fa fa-shopping-bag text-body"></small>
+                
+                <a class="btn-sm-square bg-white rounded-circle ms-3"  href="<c:url value="/cart"/>" >
+                    <i style=" font-size: 50px" class="fa fa-shopping-bag text-body"></i>
+                    <div style=" font-size: 50px" class="bad badge-danger" id="cartCounter">${cartCounter}</div>
                 </a>
             </div>
         </div>

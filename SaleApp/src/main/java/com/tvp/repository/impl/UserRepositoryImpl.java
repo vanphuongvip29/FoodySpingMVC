@@ -66,5 +66,7 @@ public class UserRepositoryImpl implements UserRepository{
         
         return session.get(User.class, userId);
     }
+
+    
     
 }

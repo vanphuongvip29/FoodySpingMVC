@@ -49,7 +49,7 @@ public class FollowRating implements Serializable {
     
     @JoinColumn(name = "store_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    @JsonIgnore
+//    @JsonIgnore
     private Store storeId;
     
     @JoinColumn(name = "user_id", referencedColumnName = "id")

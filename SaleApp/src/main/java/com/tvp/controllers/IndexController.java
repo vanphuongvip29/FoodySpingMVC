@@ -4,6 +4,7 @@
  */
 package com.tvp.controllers;
 
+import com.tvp.pojo.Cart;
 import com.tvp.pojo.Category;
 import com.tvp.pojo.Store;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.tvp.service.CategoryService;
 import com.tvp.service.StoreService;
+import com.tvp.utils.Utils;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +40,7 @@ public class IndexController {
     public void commonAttrs(Model model, HttpSession session) {
         model.addAttribute("categories", this.categoryService.getCategories());
         model.addAttribute("currentUser", session.getAttribute("currentUser"));
+        model.addAttribute("cartCounter", Utils.countCart((Map<Integer, Cart>) session.getAttribute("cart")));
     }
 
     @RequestMapping("/")

@@ -69,7 +69,7 @@ public class Store implements Serializable {
     @Column(name = "address")
     private String address;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "image")
     private String image;
@@ -82,6 +82,7 @@ public class Store implements Serializable {
     private Category categoryId;
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
+    @JsonIgnore
     private User userId;
     
     @Transient

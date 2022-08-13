@@ -5,8 +5,10 @@
 package com.tvp.pojo;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,11 +18,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -36,6 +40,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "SaleOrder.findByCreatedDate", query = "SELECT s FROM SaleOrder s WHERE s.createdDate = :createdDate")})
 public class SaleOrder implements Serializable {
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "billId")
+    private Collection<OrderDetail> orderDetailCollection;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,9 +56,7 @@ public class SaleOrder implements Serializable {
     @Column(name = "created_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
-    @JoinColumn(name = "payments_id", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private Payments paymentsId;
+    
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private User userId;
@@ -92,13 +97,7 @@ public class SaleOrder implements Serializable {
         this.createdDate = createdDate;
     }
 
-    public Payments getPaymentsId() {
-        return paymentsId;
-    }
-
-    public void setPaymentsId(Payments paymentsId) {
-        this.paymentsId = paymentsId;
-    }
+    
 
     public User getUserId() {
         return userId;
@@ -131,6 +130,15 @@ public class SaleOrder implements Serializable {
     @Override
     public String toString() {
         return "com.tvp.pojo.SaleOrder[ id=" + id + " ]";
+    }
+
+    @XmlTransient
+    public Collection<OrderDetail> getOrderDetailCollection() {
+        return orderDetailCollection;
+    }
+
+    public void setOrderDetailCollection(Collection<OrderDetail> orderDetailCollection) {
+        this.orderDetailCollection = orderDetailCollection;
     }
     
 }

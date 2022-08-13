@@ -22,10 +22,12 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -43,6 +45,9 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Food.findByActive", query = "SELECT f FROM Food f WHERE f.active = :active")})
 public class Food implements Serializable {
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "foodId")
+    private Collection<OrderDetail> orderDetailCollection;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -55,7 +60,7 @@ public class Food implements Serializable {
     @Column(name = "name")
     private String name;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "image")
     private String image;
@@ -72,6 +77,9 @@ public class Food implements Serializable {
     private Collection<Store> storeCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "foodId")
     private Collection<CommentRating> commentRatingCollection;
+    
+    @Transient
+    private MultipartFile file;
 
     public Food() {
     }
@@ -168,6 +176,29 @@ public class Food implements Serializable {
     @Override
     public String toString() {
         return "com.tvp.pojo.Food[ id=" + id + " ]";
+    }
+
+    /**
+     * @return the file
+     */
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    /**
+     * @param file the file to set
+     */
+    public void setFile(MultipartFile file) {
+        this.file = file;
+    }
+
+    @XmlTransient
+    public Collection<OrderDetail> getOrderDetailCollection() {
+        return orderDetailCollection;
+    }
+
+    public void setOrderDetailCollection(Collection<OrderDetail> orderDetailCollection) {
+        this.orderDetailCollection = orderDetailCollection;
     }
     
 }

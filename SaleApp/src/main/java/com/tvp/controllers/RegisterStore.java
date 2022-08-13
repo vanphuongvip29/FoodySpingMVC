@@ -48,7 +48,7 @@ public class RegisterStore {
         User u = (User) session.getAttribute("currentUser");
         
         if (!result.hasErrors()) {
-            if(this.storeService.addOrUpdate(store)==true)
+            if(this.storeService.addOrUpdate(store,u)==true)
                 return "redirect:/";
             else
                 model.addAttribute("errMsg", "Something wrong!!");

@@ -17,22 +17,30 @@
     <div class="col-md-6">
         <h1>${store.name}</h1>
         <h3>${store.address}</h3>
+        <!--        <div id="map">
+                     Maps 
+                    
+                </div>-->
     </div>
 </div>
 <br><!-- comment -->
+
+
+<br>
+
 <br>
 <c:forEach items="${store.foodCollection}" var="food">
     <div class="row">
         <div class="col-md-5">           
-                <image style="width: 25%; margin-left: 64px" class="card-img-top img-fluid" src="${food.image}"/>            
-                <h1>${food.name}</h1>    
+            <image style="width: 25%; margin-left: 64px" class="card-img-top img-fluid" src="${food.image}"/>            
+            <h1>${food.name}</h1>    
         </div>
         <div class="col-md-3">
             <h3 style="margin-top: 20px">${food.price} VND</h3>
         </div>
         <div class="col-md-2" style="margin-top: 20px">
-            <input style="width: 50px" type="submit" value="+" class="btn btn-danger" />
-       </div>
+            <a href="#" style="width: 50px" class="btn btn-danger" onclick="addToCart(${food.id}, '${food.name}', ${food.price})" />+</a>
+        </div>
     </div>
     <br><!-- comment -->
 </c:forEach>
@@ -78,13 +86,31 @@
         </ul>
     </nav>
 
+    <!--    <div id="map">
+             Maps 
+    
+        </div>-->
+
     <script >
         window.onload = function () {
             let dates = document.querySelectorAll(".commentDate > i")
             for (let i = 0; i < dates.length; i++)
                 dates[i].innerText = moment(dates[i].innerText).fromNow()
         };
+       
+
+
+
+//        function initMap() {
+//            var map = new google.maps.Map(document.getElementById("map"), {
+//                center: {lat: 21.0168864, lng: 105.7855574},
+//                zoom: 2
+//            });
+//        }
 
 
     </script>
+
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADdaCljbArmntPbGxGCes5dt4LFJG7e2Y&callback=initMap" async defer></script>-->
+
 

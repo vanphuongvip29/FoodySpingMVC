@@ -16,4 +16,6 @@ public interface UserRepository {
     List<User> getUsers(String username);
     
     User getUserById(int userId);
+    
+    
 }

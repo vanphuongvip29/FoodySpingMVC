@@ -5,6 +5,7 @@
 package com.tvp.service;
 
 import com.tvp.pojo.Store;
+import com.tvp.pojo.User;
 import java.util.List;
 
 /**
@@ -17,5 +18,5 @@ public interface StoreService {
     
     Store getStoreById(int storeId);
     
-    boolean addOrUpdate(Store store);
+    boolean addOrUpdate(Store store, User creator);
 }
