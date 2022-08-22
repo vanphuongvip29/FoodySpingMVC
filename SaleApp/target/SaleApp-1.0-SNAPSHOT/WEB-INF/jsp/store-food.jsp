@@ -29,6 +29,7 @@
 <br>
 
 <br>
+
 <c:forEach items="${store.foodCollection}" var="food">
     <div class="row">
         <div class="col-md-5">           

@@ -1,4 +1,6 @@
+D:\Java Web\SaleApp\src\main\java\com\tvp\repository\StatsRepository.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\service\impl\FoodServiceImpl.java
+D:\Java Web\SaleApp\src\main\java\com\tvp\service\StatsService.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\configs\TilesConfig.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\pojo\Store.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\formatter\CategoryFormatter.java
@@ -23,19 +25,21 @@ D:\Java Web\SaleApp\src\main\java\com\tvp\service\UserService.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\controllers\ApiCartController.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\pojo\User.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\service\FoodService.java
+D:\Java Web\SaleApp\src\main\java\com\tvp\pojo\StoreFood.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\service\CommentStoreService.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\repository\CommentStoreRepository.java
-D:\Java Web\SaleApp\src\main\java\com\tvp\controllers\RegisterFood.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\service\impl\OrderServiceImpl.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\repository\impl\CategoryRespositoryImpl.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\repository\CategoryRepository.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\configs\handlers\LogoutHandler.java
+D:\Java Web\SaleApp\src\main\java\com\tvp\service\impl\StatsServiceImpl.java
+D:\Java Web\SaleApp\src\main\java\com\tvp\repository\impl\StatsRepositoryImpl.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\pojo\FollowRating.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\repository\impl\CommentStoreRepositoryImpl.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\repository\UserRepository.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\service\impl\UserServiceImpl.java
-D:\Java Web\SaleApp\src\main\java\com\tvp\controllers\RegisterStore.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\service\impl\CategoryServiceImpl.java
+D:\Java Web\SaleApp\src\main\java\com\tvp\controllers\RegisterFoodController.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\utils\Utils.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\configs\SecurityWebAppInitializer.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\controllers\ApiCommentController.java
@@ -53,3 +57,4 @@ D:\Java Web\SaleApp\src\main\java\com\tvp\configs\DispatcherServletInit.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\pojo\Food.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\pojo\Payments.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\pojo\OrderDetail.java
+D:\Java Web\SaleApp\src\main\java\com\tvp\controllers\RegisterStoreController.java

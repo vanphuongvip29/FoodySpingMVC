@@ -11,14 +11,15 @@
   <div class="container-fluid">
     <ul class="navbar-nav">
       <li class="nav-item">
-          <a class="nav-link" href="<c:url value="admin/category-stats"/>">Thong ke doanh thu theo san pham</a>
+          <a class="nav-link" href="<c:url value="/admin/category-stats"/>">Thong ke doanh thu theo san pham</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link 2</a>
+        <a class="nav-link" href="<c:url value="/admin/store-stats"/>">Thong ke doanh thu cua hang</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link 3</a>
+        <a class="nav-link" href="<c:url value="/admin/store-month-stats"/>">Thong ke doanh thu theo thang</a>
       </li>
+      
     </ul>
   </div>
 </nav>

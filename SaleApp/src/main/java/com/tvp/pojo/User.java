@@ -83,7 +83,7 @@ public class User implements Serializable {
     @JsonIgnore
     private String password;
     @Column(name = "active")
-    private Boolean active;
+    private Integer active;
     @Size(max = 10)
     @Column(name = "user_role")
     private String userRole;
@@ -91,7 +91,9 @@ public class User implements Serializable {
     @JsonIgnore
     private Collection<SaleOrder> saleOrderCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
+    @JsonIgnore
     private Collection<CommentRating> commentRatingCollection;
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
     private Collection<FollowRating> followRatingCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId", fetch = FetchType.EAGER)
@@ -171,11 +173,11 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public Boolean getActive() {
+    public Integer getActive() {
         return active;
     }
 
-    public void setActive(Boolean active) {
+    public void setActive(Integer active) {
         this.active = active;
     }
 

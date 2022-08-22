@@ -40,6 +40,14 @@ public class UserController {
     @PostMapping("/register")
     public String register(Model model,@ModelAttribute(value = "user") User user){
         String errMsg = "";
+        
+        
+//        System.out.println(user.getUserRole());
+//        if(user.getUserRole()=="ROLE_USER")
+//            user.setActive(1);
+//        else
+//            user.setActive(0);
+        
         if(user.getPassword().equals(user.getConfirmPassword())){
             if(this.userDetailsService.addUser(user)==true)
                 return "redirect:/login";

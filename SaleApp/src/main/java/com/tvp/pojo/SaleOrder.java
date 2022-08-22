@@ -62,6 +62,7 @@ public class SaleOrder implements Serializable {
     private User userId;
 
     public SaleOrder() {
+        createdDate = new Date();
     }
 
     public SaleOrder(Integer id) {

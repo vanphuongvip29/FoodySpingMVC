@@ -16,7 +16,7 @@
     <div style="margin-top:20px" class="alert alert-danger">
         ${errMsg}
     </div>
-    
+
 </c:if>
 <c:url value="/register" var="action"/>
 
@@ -39,11 +39,19 @@
     </div>
     <div style="margin-top:20px" class="form-group">
         <label for="password">Password</label>
-         <form:input type="password" id="password" path="password" class="form-control"  />
+        <form:input type="password" id="password" path="password" class="form-control"  />
     </div>
     <div style="margin-top:20px" class="form-group">
         <label for="confirm-password">Confirm Password</label>
-         <form:input type="password" id="confirm-password" path="confirmPassword" class="form-control"  />
+        <form:input type="password" id="confirm-password" path="confirmPassword" class="form-control"  />
+    </div>
+    <div class="form-group">
+        <label for="cate">User role</label>
+        <form:select id="role" path="userRole" cssClass="form-control">           
+                <option value="ROLE_USER">USER</option>   
+                <option value="ROLE_STORE">STORE</option>            
+        </form:select>
+        
     </div>
     <div style="margin-top:20px" class="form-group">
         <input type="submit" value="DANG KY" class="btn btn-primary" />
