@@ -7,6 +7,7 @@ package com.tvp.repository.impl;
 import com.tvp.pojo.Cart;
 import com.tvp.pojo.OrderDetail;
 import com.tvp.pojo.SaleOrder;
+import com.tvp.pojo.User;
 import com.tvp.repository.FoodRepository;
 import com.tvp.repository.OrderRepository;
 import com.tvp.repository.UserRepository;
@@ -39,16 +40,19 @@ public class OrderRepositoryImpl implements OrderRepository {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED )
-    public boolean addReceipt(Map<Integer, Cart> cart) {
+    public boolean addReceipt(Map<Integer, Cart> cart, User creator) {
 
         try {
             Session session = this.sessionFactory.getObject().getCurrentSession();
             SaleOrder order = new SaleOrder();
-            order.setUserId(this.userRepository.getUserById(6));
+//            order.setUserId(this.userRepository.getUserById(6));
+            order.setUserId(creator);
             order.setCreatedDate(new Date());
 
             Map<String, String> stats = Utils.cartStats(cart);
-            Long.parseLong(stats.get("amount"));
+//            Long.parseLong(stats.get("amount"));
+            
+            order.setAmount(Long.parseLong(stats.get("amount")));
 
             session.save(order);
 

@@ -5,6 +5,7 @@
 package com.tvp.controllers;
 
 import com.tvp.pojo.Cart;
+import com.tvp.pojo.User;
 import com.tvp.service.OrderService;
 import com.tvp.utils.Utils;
 import java.util.HashMap;
@@ -88,7 +89,9 @@ public class ApiCartController {
     
     @PostMapping("/api/pay")
     public HttpStatus pay(HttpSession session){
-        if(this.orderService.addReceipt((Map<Integer, Cart>) session.getAttribute("cart")) == true)
+        
+        User u = (User) session.getAttribute("currentUser");
+        if(this.orderService.addReceipt((Map<Integer, Cart>) session.getAttribute("cart"), u) == true)
         {  
             session.removeAttribute("cart");
             return HttpStatus.OK;

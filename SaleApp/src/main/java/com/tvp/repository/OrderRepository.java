@@ -5,6 +5,7 @@
 package com.tvp.repository;
 
 import com.tvp.pojo.Cart;
+import com.tvp.pojo.User;
 import java.util.Map;
 
 /**
@@ -12,5 +13,5 @@ import java.util.Map;
  * @author tran van phuong
  */
 public interface OrderRepository {
-    boolean addReceipt(Map<Integer, Cart> cart);
+    boolean addReceipt(Map<Integer, Cart> cart,User creator);
 }
