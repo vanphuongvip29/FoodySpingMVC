@@ -6,6 +6,7 @@ com.tvp.controllers.AdminController=org.springframework.stereotype.Component
 com.tvp.controllers.ApiCartController=org.springframework.stereotype.Component
 com.tvp.controllers.ApiCommentController=org.springframework.stereotype.Component
 com.tvp.controllers.CartController=org.springframework.stereotype.Component
+com.tvp.controllers.FoodController=org.springframework.stereotype.Component
 com.tvp.controllers.IndexController=org.springframework.stereotype.Component
 com.tvp.controllers.RegisterFoodController=org.springframework.stereotype.Component
 com.tvp.controllers.RegisterStoreController=org.springframework.stereotype.Component

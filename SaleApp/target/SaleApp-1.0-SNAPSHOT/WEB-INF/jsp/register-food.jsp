@@ -51,37 +51,26 @@
     </div>
     <br><!-- comment -->
 
-    <c:url value="/store/registerFood" var="food">
-        <c:param name="food" value="${storeUser.id}"></c:param>
-    </c:url>
-    <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="${food}">Them mon an</a>
+    <%--<c:url value="/store/registerFood/${storeUser.id}" var="store">--%>
+        <%--<c:param name="StoreId" value="${storeUser.id}"></c:param>--%>
+    <%--</c:url>--%>
+    <!--<a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="${store}">Them mon an</a>-->
+    <div style="background-color: lightblue"
+    <a class="w-50 text-center border-end py-2">
+        <a class="text-body" href="<c:url value="/store/registerFood/${storeUser.id}" />">THEM MON AN</a>
+    </a>
+</div>
 
+    <br>
+    <hr>
 
 </c:forEach>
+    
+    
 
 
 
 
-<c:url value="/store/registerFood" var="action"></c:url>
 
-<form:form action="${action}"
-           modelAttribute="food"
-           enctype="multipart/form-data">
-    <div class="mb-3 mt-3">
-        <label for="name">Ten Mon An</label>
-        <form:input type="text" id="name" path="name" cssClass="form-control" />
-    </div>
-    <div class="mb-3">
-        <label for="price">Gia</label>
-        <form:input type="text" id="price" path="price" cssClass="form-control" />
-    </div>
-    <div class="mb-3">
-        <label for="file">Anh Mon An</label>
-        <form:input type="file" id="file" path="file" cssClass="form-control" />
-    </div>
 
-    <div class="form-group" >
-        <input type="submit" value="Them Mon An" class="btn btn-primary" />
-    </div>
-</form:form>
 

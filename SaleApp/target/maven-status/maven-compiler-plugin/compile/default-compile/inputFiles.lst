@@ -31,6 +31,7 @@ D:\Java Web\SaleApp\src\main\java\com\tvp\repository\CommentStoreRepository.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\service\impl\OrderServiceImpl.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\repository\impl\CategoryRespositoryImpl.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\repository\CategoryRepository.java
+D:\Java Web\SaleApp\src\main\java\com\tvp\controllers\FoodController.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\configs\handlers\LogoutHandler.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\service\impl\StatsServiceImpl.java
 D:\Java Web\SaleApp\src\main\java\com\tvp\repository\impl\StatsRepositoryImpl.java

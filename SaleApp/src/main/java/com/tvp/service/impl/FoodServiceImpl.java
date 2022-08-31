@@ -7,6 +7,9 @@ package com.tvp.service.impl;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import com.tvp.pojo.Food;
+import com.tvp.pojo.Store;
+import com.tvp.pojo.StoreFood;
+import com.tvp.pojo.User;
 import com.tvp.repository.FoodRepository;
 import com.tvp.service.FoodService;
 import java.io.IOException;
@@ -34,7 +37,7 @@ public class FoodServiceImpl implements FoodService {
     }
 
     @Override
-    public boolean addOrUpdate(Food food) {
+    public boolean addOrUpdate(Food food, int storeId) {
         try {
 
             Map r = this.cloudinary.uploader().upload(food.getFile().getBytes(),
@@ -44,7 +47,7 @@ public class FoodServiceImpl implements FoodService {
 
             
 
-            return this.foodRepository.addOrUpdate(food);
+            return this.foodRepository.addOrUpdate(food, storeId);
 
         } catch (IOException ex) {
             System.err.println("=== ADD STORE ==" + ex.getMessage());
@@ -53,5 +56,6 @@ public class FoodServiceImpl implements FoodService {
         return false;
     }
 
+    
    
 }

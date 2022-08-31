@@ -34,6 +34,10 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="title" value="Đăng ký món ăn" />
         <put-attribute name="content" value="/WEB-INF/jsp/register-food.jsp" />
     </definition>
+    <definition name="food" extends="baseLayout">
+        <put-attribute name="title" value="Đăng ký món ăn" />
+        <put-attribute name="content" value="/WEB-INF/jsp/food.jsp" />
+    </definition>
     <definition name="cart" extends="baseLayout">
         <put-attribute name="title" value="Gio hang" />
         <put-attribute name="content" value="/WEB-INF/jsp/cart.jsp" />

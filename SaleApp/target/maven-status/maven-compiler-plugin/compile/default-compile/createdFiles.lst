@@ -40,6 +40,7 @@ com\tvp\controllers\ApiCartController.class
 com\tvp\configs\DispatcherServletInit.class
 com\tvp\pojo\StoreFood_.class
 com\tvp\repository\StatsRepository.class
+com\tvp\controllers\FoodController.class
 com\tvp\repository\impl\CategoryRespositoryImpl.class
 com\tvp\repository\OrderRepository.class
 com\tvp\service\impl\CategoryServiceImpl.class

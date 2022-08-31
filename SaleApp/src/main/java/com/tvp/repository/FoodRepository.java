@@ -5,6 +5,9 @@
 package com.tvp.repository;
 
 import com.tvp.pojo.Food;
+import com.tvp.pojo.StoreFood;
+import com.tvp.pojo.User;
+import com.tvp.pojo.Store;
 import java.util.List;
 
 /**
@@ -15,5 +18,7 @@ public interface FoodRepository {
     Food getFoodById(int foodId);
     
 
-    boolean addOrUpdate(Food food);
+    boolean addOrUpdate(Food food, int storeId);
+    
+    
 }
